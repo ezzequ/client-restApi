@@ -1,0 +1,12 @@
+GET http://localhost:5500/api/mangas
+
+###
+
+POST http://localhost:5500/api/mangas
+Content-Type: application/json
+
+{
+    "name": "Fairy tail",
+    "chapters": 545,
+    "id": 6
+}
