@@ -1,0 +1,34 @@
+{
+    "mangas":[
+  {
+    "name": "Attack On Titan",
+    "genre": "action",
+    "chapters": "149",
+    "id": "a"
+  },
+  {
+    "name": "Tokyo Ghoul",
+    "genre": "dark fantasy",
+    "chapters": "143",
+    "id": "b"
+  },
+  {
+    "name": "Demon Slayer",
+    "genre": "dark fantasy",
+    "chapters": "250",
+    "id": "c"
+  },
+  {
+    "name": "death Note",
+    "genre": "thriller",
+    "chapters": "108",
+    "id": "d"
+  },
+  {
+    "name": "Fullmetal Alchemist",
+    "genre": "adventure",
+    "chapters": "116",
+    "id": "e"
+  }
+]
+}

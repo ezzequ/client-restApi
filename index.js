@@ -4,7 +4,6 @@ const app = express();
 const hostname = "localhost";
 const port = 5500;
 
-Interface
 app.use(express.json());
 
 app.use("/", (req, res, next) => {
@@ -14,36 +13,36 @@ app.use("/", (req, res, next) => {
 
 app.use("/", express.static("public"));
 
-const mangas = [
+let mangas = [
   {
     name: "Attack On Titan",
     genre: "action",
     chapters: "149",
-    id: 1,
+    id: "a",
   },
   {
     name: "Tokyo Ghoul",
     genre: "dark fantasy",
     chapters: "143",
-    id: 2,
+    id: "b",
   },
   {
     name: "Demon Slayer",
     genre: "dark fantasy",
     chapters: "250",
-    id:3,
+    id: "c",
   },
   {
     name: "death Note",
     genre: "thriller",
     chapters: "108",
-    id:4,
+    id: "d",
   },
   {
     name: "Fullmetal Alchemist",
     genre: "adventure",
     chapters: "116",
-    id: 5,
+    id: "e",
   }
 ];
 
@@ -58,14 +57,28 @@ app.post("/api/mangas", (req, res) => {
   res.status(201).send("your manga list has been created");
 });
 
+
+app.delete("/api/mangas/:id",(req, res) => {
+  let { id } = req.params;
+  let mangaToDelete = mangas.filter((manga) => manga.id !== id);
+  console.log(mangaToDelete)
+  //  if (mangaToDelete == -1) {
+  //   // const updatedMangas = mangas.filter(test => test.id != id);
+  //   //     mangas = updatedMangas
+      
+  //   let updatedMangas = mangas.splice(mangaToDelete,1);
+  //   updatedMangas = mangas
+  //   console.log(updatedMangas);
+    
+  // }
+  // else if (mangaToDelete != -1) {
+  //   res.status(404).send("something wrong");
+  // }
+  
+});
+
+
 app.listen(port, hostname, () => {
   console.log(`Server is running on http://${hostname}:${port}`);
 });
 
-app.delete("api/mangas/:id", (req,res)=>{
-  let mangaToDelete = req.params.id;
-  let myMangaListUpdated = mangas.filter((manga) => manga.id != mangaToDelete)
-  mangas = myMangaListUpdated
-
-  res.status(200).send("manga has been deleted from your list")
-});
