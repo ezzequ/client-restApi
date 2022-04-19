@@ -1,6 +1,7 @@
 
 const express = require("express");
 const app = express();
+const fs = require("fs");
 const hostname = "localhost";
 const port = 5500;
 
@@ -31,30 +32,31 @@ let mangas = [
     genre: "dark fantasy",
     chapters: "250",
     id: "c",
-  },
-  {
-    name: "death Note",
-    genre: "thriller",
-    chapters: "108",
-    id: "d",
-  },
-  {
-    name: "Fullmetal Alchemist",
-    genre: "adventure",
-    chapters: "116",
-    id: "e",
   }
+  // {
+  //   name: "death Note",
+  //   genre: "thriller",
+  //   chapters: "108",
+  //   id: "d",
+  // },
+  // {
+  //   name: "Fullmetal Alchemist",
+  //   genre: "adventure",
+  //   chapters: "116",
+  //   id: "e",
+  // }
 ];
 
-
 app.get("/api/mangas", (req, res) => {
-  res.json(mangas);
+  res.send(mangas);
 });
 
 app.post("/api/mangas", (req, res) => {
+  const manga = req.body
+  res.status(201);
   console.log(req.body);
-  mangas.push(req.body);
-  res.status(201).send("your manga list has been created");
+  mangas.push({...manga});
+  res.send("your manga has been added to the list");
 });
 
 
