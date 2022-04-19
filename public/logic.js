@@ -38,7 +38,7 @@ document.getElementsByTagName("button")[0].addEventListener("click", async (even
     }
   }
   );
-
+ 
 async function getMangas() {
   try {
     let response = await fetch("http://localhost:5500/api/mangas");
