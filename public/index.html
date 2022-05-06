@@ -6,11 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my manga list</title>
      <script defer src="./logic.js"></script>
+     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <button class="GET">get my mangas</button>
+    
+   
+
+    <form>
+        <div class="containerDiv">
+            <div>
+            <label for="name">name</label>
+            <input class="form-control" name="name">
+            </div>
+
+            <div>
+             <label for="genre">genre</label>
+             <input class="form-control" name="genre">
+             </div>
+
+             <div>
+            <label for="chapters">chapters ive read</label>
+            <input class="form-control" name="chapters">
+            </div>
+        <button id="sub" type="submit">Submit</button>
+        </div>
+    </form>
+    <div class="containerDiv">
+     <button class="GET">update mangas</button>
+    </div>
     <div class="myMangas"></div>
-    <button class="DELETE">delete</button>
-    <button class="ADD">add randomised manga</button>
 </body>
 </html>
